@@ -12,45 +12,6 @@ body{
     font-family: 'Playfair Display', serif;
 }
 
-.queStart{
-    margin-top: 5rem;
-    margin: auto;
-    /* height: 80vmin; */
-    height: 50rem;
-    width: 100%;
-    background-image: url('./dr.diet.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hding{
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    font-size: 3rem;
-    color: #b38888;
-    margin-bottom: 10%;
-}
-
-.btnStart {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 1.5rem;
-    background-color: #7f9475;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.btnStart:hover {
-    transform: scale(1.1);
-    background-color: #5f734d;
-}
 
 .allQuestions {
     display: flex;
