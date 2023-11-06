@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700i,900i';
+
 body{
     margin: 0;
     box-sizing: border-box;
@@ -5,13 +7,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: max-content;
+    /* height: 100vh; */
     padding-bottom: 7%;
+    font-family: 'Playfair Display', serif;
 }
 
 .queStart{
-    height: 80vmin;
-    width: 80vmin;
+    margin-top: 5rem;
+    margin: auto;
+    /* height: 80vmin; */
+    height: 85vh;
+    width: 80%;
     background-image: url("./images/drDiet.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -45,3 +51,69 @@ body{
     transform: scale(1.1);
     background-color: #5f734d;
 }
+
+.allQuestions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+    padding: 20px;
+    background-color: #c3e8bd;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+.que1 {
+    padding: 0;
+}
+.que1 h3 {
+    font-size: 1.5rem;
+    color: #4c956c;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+.que1 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.que1 label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4c956c;
+    font-size: 1.2rem;
+  }
+.que1 input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4c956c;
+    width: 150%;
+  }
+.que1 input:focus {
+    outline: none;
+    border: 2px solid #7fbb87;
+  }
+.que1 input::placeholder {
+    color: #7fbb87;
+  }
+.que1 button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #7fbb87;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+.que1 button:hover {
+    transform: scale(1.1);
+    background-color: #5f8e64;
+  }
