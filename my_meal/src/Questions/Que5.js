@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './que.css';
 import NxtBtn from './NxtBtn'
 
-const Que05 = () => {
+const Que05 = ({ handleNext }) => {
 
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
@@ -15,6 +15,11 @@ const Que05 = () => {
     setWeight(event.target.value);
   }
 
+
+  const handleContinue = () => {
+    handleNext();
+  };
+  
     return(
             <div className='allQuestions'>
                 <h3>Now starts your diet planning session</h3>
@@ -27,7 +32,7 @@ const Que05 = () => {
                     <input type="number" value={weight} onChange={handleWeightChange}/>
                   </label>
                 {/* </form> */}
-                  <NxtBtn txt="Continue"></NxtBtn>
+                  <NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
             </div>
     );
 }

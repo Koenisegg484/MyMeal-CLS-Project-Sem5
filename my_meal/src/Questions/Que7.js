@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './que.css';
 import NxtBtn from './NxtBtn'
 
-const Que07 = () => {
+const Que07 = ({ handleNext }) => {
   const [hasAllergies, setHasAllergies] = useState(null);
   const [allergyDetails, setAllergyDetails] = useState('');
 
@@ -14,6 +14,12 @@ const Que07 = () => {
     setAllergyDetails(event.target.value);
   };
 
+
+  const handleContinue = () => {
+    handleNext();
+  };
+
+  
   return (
     <div className='allQuestions'>
       <h3>Do you have any allergies?</h3>
@@ -46,7 +52,7 @@ const Que07 = () => {
             <textarea value={allergyDetails} onChange={handleAllergyDetailsChange} />
           </div>
         )}
-    <NxtBtn txt="Continue"></NxtBtn>
+    <NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
     </div>
   );
 }

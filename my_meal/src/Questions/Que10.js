@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import './que.css';
 import NxtBtn from './NxtBtn'
 
-const Que10 = () => {
+const Que10 = ({ handleNext }) => {
     const [waterIntake, setWaterIntake] = useState('');
 
   const handleWaterIntakeChange = (event) => {
     setWaterIntake(event.target.value);
   };
 
+  const handleContinue = () => {
+    handleNext();
+  };
+
+  
   return (
     <div className='allQuestions'>
         <div className='que10'>
@@ -20,7 +25,7 @@ const Que10 = () => {
             placeholder="Enter the amount in liters"
           />
         </div>
-    <NxtBtn txt="Continue"></NxtBtn>
+    <NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
     </div>
   );
 }

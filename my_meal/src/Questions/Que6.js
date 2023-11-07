@@ -5,12 +5,17 @@ import image2 from '../images/food (2).png'
 import image3 from '../images/food (3).png'
 import NxtBtn from './NxtBtn'
 
-const Que06 = () => {
+const Que06 = ({ handleNext }) => {
     const [dietPreference, setDietPreference] = useState('');
 
   const handlePreferenceChange = (preference) => {
     setDietPreference(preference);
   };
+
+  const handleContinue = () => {
+    handleNext();
+  };
+  
 
   return (
     <div className='allQuestions'>
@@ -49,7 +54,7 @@ const Que06 = () => {
         /><p>Other</p></div>
       </label>
       </div>
-      <NxtBtn txt="Continue"></NxtBtn>
+      <NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
     </div>
   );
 }

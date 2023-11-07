@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import './que.css';
 import NxtBtn from './NxtBtn'
 
-const Que09 = () => {
+const Que09 = ({ handleNext }) => {
     const [mealCount, setMealCount] = useState('');
 
   const handleMealCountChange = (event) => {
     setMealCount(event.target.value);
   };
 
+
+  const handleContinue = () => {
+    handleNext();
+  };
+
+  
   return (
     <div className='allQuestions'>
       <h3>How many meals do you want to have?</h3>
@@ -20,7 +26,7 @@ const Que09 = () => {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-<NxtBtn txt="Continue"></NxtBtn>
+<NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
     </div>
   );
 

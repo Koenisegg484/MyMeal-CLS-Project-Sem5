@@ -4,7 +4,7 @@ import NxtBtn from './NxtBtn'
 
 
 
-const Que08 = () => {
+const Que08 = ({ handleNext }) => {
     const [hasDietaryRestrictions, setHasDietaryRestrictions] = useState(null);
   const [restrictionDetails, setRestrictionDetails] = useState('');
 
@@ -15,6 +15,12 @@ const Que08 = () => {
   const handleRestrictionDetailsChange = (event) => {
     setRestrictionDetails(event.target.value);
   };
+
+
+  const handleContinue = () => {
+    handleNext();
+  };
+  
 
   return (
     <div className='allQuestions'>
@@ -48,7 +54,7 @@ const Que08 = () => {
           <textarea value={restrictionDetails} onChange={handleRestrictionDetailsChange} />
         </div>
       )}
-    <NxtBtn txt="Continue"></NxtBtn>
+    <NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
     </div>
   );
 }

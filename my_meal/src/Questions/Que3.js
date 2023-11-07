@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import './que.css';
 import NxtBtn from './NxtBtn'
 
-const Que03 = () => {
+const Que03 = ({ handleNext }) => {
     const [selectedGender, setSelectedGender] = useState('');
 
     const handleGenderChange = (event) => {
       setSelectedGender(event.target.value);
     };
+
+    const handleContinue = () => {
+      handleNext();
+    };
+
     return (
         <div className='allQuestions'>
           <h3>Select Gender:</h3>
@@ -45,7 +50,7 @@ const Que03 = () => {
             Other
           </label>
           </div>
-          <NxtBtn txt="Continue"></NxtBtn>
+          <NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
         </div>
       );
 }

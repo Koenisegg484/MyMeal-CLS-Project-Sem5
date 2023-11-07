@@ -1,5 +1,6 @@
 import './que.css'
-import Que01 from './Questions/Que1'
+import React, { useState } from 'react';
+import Que1 from './Questions/Que1'
 import Que02 from './Questions/Que2'
 import Que03 from './Questions/Que3'
 import Que04 from './Questions/Que4'
@@ -16,39 +17,72 @@ const Queend = () => {
     return (
         <div className='allQuestions'>
             <h2>Allright, that's all for now...</h2>
-            <NxtBtn txt="Create my Meal Plan"></NxtBtn>
+            <NxtBtn txt="Create my Meal Plan" onClick={{Queend}}></NxtBtn>
         </div>
     );
 }
 const Questions = () => {
+    const [start, setStart] = useState(false);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const handleStart = () => {
+        setStart(!start);
+    };
+
+    const handleNext = () => {
+        setCurrentQuestion((prev) => prev + 1);
+    };
+
+    const renderQuestion = () => {
+        switch (currentQuestion) {
+            case 0:
+                return <Que1 handleNext={handleNext} />;
+        case 1:
+            return <Que02 handleNext={handleNext}/>;
+        case 2:
+            return <Que03 handleNext={handleNext}/>;
+        case 3:
+            return <Que04 handleNext={handleNext}/>;
+        case 4:
+            return <Que05 handleNext={handleNext}/>;
+        case 5:
+            return <Que06 handleNext={handleNext}/>;
+        case 6:
+            return <Que07 handleNext={handleNext}/>;
+        case 7:
+            return <Que08 handleNext={handleNext}/>;
+        case 8:
+            return <Que09 handleNext={handleNext}/>;
+        case 9:
+            return <Que10 handleNext={handleNext}/>;
+        case 10:
+            return <Que11 handleNext={handleNext}/>;
+        case 11:
+            return <Queend />;
+        default:
+            return null;
+        }
+    };
 
     return (
-            <form><div className='queStart'>
-                <h2 className='hding'>Hi, I am
-                <span style={
-                    {textDecoration:"underline",
-                    fontSize:"4rem",
-                    color:"#7f9475",
-                    marginLeft:"20px",
-                    marginRight:"20px"
-                    }
+        <>
+            {!start ? (
+                <div className='queStart'>
+                    <h2 className='hding'>Hi, I am
+                    <span style={
+                        { textDecoration: "underline", fontSize: "4rem", color: "#7f9475", marginLeft: "20px", marginRight: "20px" }
                     }>Mealy</span>,
-                 <br/> ...Your Personal Diet Planner...</h2>
-                <NxtBtn txt="Let's Start"></NxtBtn>
-            </div>
-            <Que01/>
-            <Que02/>
-            <Que03/>
-            <Que04/>
-            <Que05/>
-            <Que06/>
-            <Que07/>
-            <Que08/>
-            <Que09/>
-            <Que10/>
-            <Que11/>
-            {Queend()}
-            </form>
+                    <br /> ...Your Personal Diet Planner...</h2>
+                    <NxtBtn txt="Let's Start" onClick={handleStart} />
+                </div>
+            ) : (
+                <>
+                <form>
+                    {renderQuestion()}
+                </form>
+                </>
+            )}
+        </>
     );
 }
 

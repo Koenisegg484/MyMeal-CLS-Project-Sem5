@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './que.css';
 import NxtBtn from './NxtBtn'
 
-const Que11 = ()=> {
+const Que11 = ({ handleNext })=> {
   const [healthRoutine, setHealthRoutine] = useState(null);
   const [Routine, setRoutine] = useState('');
   const [sportsyn, setSportsyn] = useState(null);
@@ -24,6 +24,10 @@ const Que11 = ()=> {
     setSportsyn(event.target.value);
   };
 
+
+  const handleContinue = () => {
+    handleNext();
+  };
 
   return (
     <div className='allQuestions'>
@@ -93,7 +97,7 @@ const Que11 = ()=> {
   </div>
 )}
       </div>
-<NxtBtn txt="Continue"></NxtBtn>
+<NxtBtn txt="Continue" onClick={handleContinue}></NxtBtn>
     </div>
   );
 }
